@@ -7,9 +7,8 @@
             <a href="pages/signup.php"class="text-lg font-semibold text-green-700 hover:text-green-900">Signup</a>
         <?php else: ?>
             <a href="" class="text-lg font-semibold text-green-700 hover:text-green-900">Contact Us</a>
-            <a href="" class="text-lg font-semibold text-green-700 hover:text-green-900">Book</a>
             <a href=""class="text-lg font-semibold text-green-700 hover:text-green-900">My Bookings</a>
-            <a href=""class="text-lg font-semibold text-green-700 hover:text-green-900">Signout</a>
+            <a href="pages/logout.php"class="text-lg font-semibold text-green-700 hover:text-green-900">Logout</a>
         <?php endif; ?>
     <div>
 </nav>

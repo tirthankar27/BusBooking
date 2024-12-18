@@ -2,30 +2,31 @@
     session_start();
     include 'users.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
+        $name = $_POST['name'] ?? null;
+        $email = $_POST['email'] ?? null;
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-        $checkStmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-        $checkStmt->bind_param("s", $email);
-        $checkStmt->execute();
-        $result = $checkStmt->get_result();
-
-        if ($result->num_rows > 0) {
-            echo "<script>alert('User with this email already exists. Please use another email or login.'); window.location.href='signup.php';</script>";
-        } else {
-            $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $name, $email, $password);
-
-            if ($stmt->execute()) {
-                echo "<script>alert('Signup successful! Please login.'); window.location.href='login.php';</script>";
-                exit();
+        if($email && $password){
+            $checkStmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+            $checkStmt->bind_param("s", $email);
+            $checkStmt->execute();
+            $result = $checkStmt->get_result();
+            
+            if ($result->num_rows > 0) {
+                echo "<script>alert('User with this email already exists. Please use another email or login.'); window.location.href='signup.php';</script>";
             } else {
-                echo "<script>alert('Error: " . $stmt->error . "'); window.location.href='signup.php';</script>";
+                $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
+                $stmt->bind_param("sss", $name, $email, $password);
+                
+                if ($stmt->execute()) {
+                    echo "<script>alert('Signup successful! Please login.'); window.location.href='login.php';</script>";
+                    exit();
+                } else {
+                    echo "<script>alert('Error: " . $stmt->error . "'); window.location.href='signup.php';</script>";
+                }
+                $stmt->close();
             }
-            $stmt->close();
+            $checkStmt->close();
         }
-        $checkStmt->close();
     }
 ?>
 
