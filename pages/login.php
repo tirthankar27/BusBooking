@@ -16,7 +16,7 @@
                     $_SESSION['id'] = $user['id'];
                     $_SESSION['name'] = $user['name'];
                     $_SESSION['email'] = $user['email'];
-                    header("Location: ../index.php");
+                    header("Location: ../main.php");
                     exit();
                 }
                 else{
@@ -58,7 +58,7 @@
                         <button type="submit" class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login</button>
                     </div>
                     <div class="flex justify-center">
-                        <a href="../index.php" class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Back to Home</a>
+                        <a href="../main.php" class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Back to Home</a>
                     </div>
                 </div>
             </form>

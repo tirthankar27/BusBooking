@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php include 'header.php'; ?>
+    <div class=" bg-green-100 w"> box </div>
     <?php include 'search.php';?>
     <?php include 'footer.php'; ?>
 </body>
