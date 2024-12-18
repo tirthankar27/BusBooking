@@ -1,6 +1,8 @@
 <?php
-$source = $_GET['source'];
-$dest = $_GET['dest'];
+    session_start();
+    $source = $_GET['source'];
+    $dest = $_GET['dest'];
+    $date = $_GET['date'];
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +42,11 @@ $dest = $_GET['dest'];
                         <h2 class="text-green-800 text-2xl">₹300</h2>
                     </div>
                     <div class="w-1/6 text-center">
-                        <button class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700 transition duration-300">
+                        <button class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
                             Seats
+                        </button>
+                        <button onclick="history.back()" class="bg-green-600 text-white mt-4 py-2 px-4 rounded-md hover:bg-green-800">
+                            Go Back
                         </button>
                     </div>
                 </div>
@@ -70,8 +75,11 @@ $dest = $_GET['dest'];
                         <h2 class="text-green-800 text-2xl">₹300</h2>
                     </div>
                     <div class="w-1/6 text-center">
-                        <button class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700 transition duration-300">
+                        <button class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
                             Seats
+                        </button>
+                        <button onclick="history.back()" class="bg-green-600 text-white mt-4 py-2 px-4 rounded-md hover:bg-green-800">
+                            Go Back
                         </button>
                     </div>
                 </div>
