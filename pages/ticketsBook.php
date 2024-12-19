@@ -2,24 +2,18 @@
     session_start();
     include 'users.php';
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $passenger = $_POST['passenger'];
-        $seat = $_POST['seat'];
-        if($passenger && $seat){
+        $_SESSION['passenger'] = $_POST['passenger'];
+        $_SESSION['seat'] = $_POST['seat'];
+        if($_SESSION['passenger'] && $_SESSION['seat']){
             $checkStmt=$conn->prepare("SELECT * FROM bookings WHERE seat = ? AND email = ? AND doj = ?");
-            $checkStmt->bind_param('sss',$seat,$_SESSION['email'],$date);
+            $checkStmt->bind_param('sss',$_SESSION['seat'],$_SESSION['email'],$_SESSION['date']);
             $checkStmt->execute();
             $result = $checkStmt->get_result();
             if($result->num_rows > 0){
                 echo "<script> alert('This seat has already been taken for this date.'); window.location.href='ticketsBook.php'; </script>";
             }
             else{
-                $stmt=$conn->prepare("INSERT INTO bookings (passenger, source, dest, doj, seat, email) VALUES (?,?,?,?,?,?)");
-                $stmt->bind_param('ssssss',$passenger,$_SESSION['source'],$_SESSION['dest'],$_SESSION['date'],$seat,$_SESSION['email']);
-                if($stmt->execute()){
-                    echo "<script>window.location.href='payment.php';</script>";
-                    exit();
-                }
-                $stmt->close();
+                echo "<script>window.location.href='payment.php';</script>";
             }
             $checkStmt->close();
         }
