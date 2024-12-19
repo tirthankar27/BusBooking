@@ -1,15 +1,24 @@
+<?php
+    session_start();
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+        $_SESSION['source'] = $_POST['source'];
+        $_SESSION['dest'] = $_POST['dest'];
+        $_SESSION['date'] = $_POST['date'];
+        header('Location:pages/busBook.php');
+    }
+?>
 <main class="flex flex-col min-h-screen bg-white my-24 h-full">
-    <form method="GET" action="pages/busBook.php" class="bg-center h-80 w-auto bg-green-200 rounded border-1" style="background-image: url(images/bg1.jpg);">
+    <form method="POST" action="" class="bg-center h-80 w-auto bg-green-200 rounded border-1" style="background-image: url(images/bg1.jpg);">
         <h1 class="flex flex-grow justify-center text-white text-7xl font-bold">Travel with ease</h1>
         <submit class="flex flex-col md:flex-row items-center justify-center ps-1 mt-8">
             <div class="my-auto">
-                <input type="text" name="source" size="50" maxlength="50" placeholder="From" required class="border-x border-e-slate-200 rounded-l-lg h-16">
+                <input type="text" name="source" id="source" size="50" maxlength="50" placeholder="From" required class="border-x border-e-slate-200 rounded-l-lg h-16">
             </div>
             <div class="my-auto">
-                <input type="text" name="dest" size="50" maxlength="50" placeholder="To" required class="border-e border-e-slate-200 h-16">
+                <input type="text" name="dest" id="dest" size="50" maxlength="50" placeholder="To" required class="border-e border-e-slate-200 h-16">
             </div>
             <div class="my-auto">
-                <input type="date" name="date" placeholder="DD-MM-YYYY" required class="h-16">
+                <input type="date" name="date" id="date" placeholder="DD-MM-YYYY" required class="h-16">
             </div>
             <div>
                 <button type="submit" class="bg-green-500 h-16 w-16 rounded-r-lg">Search</button>
