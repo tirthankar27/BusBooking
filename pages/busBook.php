@@ -79,7 +79,12 @@
                 </div>
             </div>
         <?php else: ?>
-            <h1 class="text-green-700 text-5xl mt-56 font-bold">Sorry We don't serve to these locations yet! 😞</h1>
+            <div class="flex flex-col justify-center items-center">
+                <h1 class="text-green-700 text-5xl mt-56 font-bold">Sorry We don't serve to these locations yet! 😞</h1>
+                <button onclick="history.back()" class="bg-green-600 text-white w-1/6 mt-4 py-2 px-4 rounded-md hover:bg-green-800">
+                    Go Back
+                </button>
+            </div>
         <?php endif; ?>
     </main>
 </body>

@@ -17,17 +17,54 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <?php
-        if($result->num_rows > 0){
-            echo $row['name'];
-            echo $row['source'];
-            echo $row['dest'];
-            echo $row['doj'];
-            echo $row['seat'];
-        }
-        else{
-            echo "No bookings yet\n";
-        }
-    ?>
+    <?php if($result->num_rows > 0):?>
+        <main class="flex flex-col justify-center items-center h-lvh w-lvw">
+            <h1 class="text-green-800 text-5xl font-bold">My Bookings</h1>
+            <div class="flex flex-row justify-centerx items-center w-full bg-green-200 h-1/6">
+                <div class="w-1/6 text-center text-green-800 font-bold text-2xl">Passenger</div>
+                <div class="w-1/6 text-center text-green-800 font-bold text-2xl">From</div>
+                <div class="w-1/6 text-center text-green-800 font-bold text-2xl">Date</div>
+                <div class="w-1/6 text-center text-green-800 font-bold text-2xl">To</div>
+                <div class="w-1/6 text-center text-green-800 font-bold text-2xl">Seat</div>
+                <div class="w-1/6 text-center text-green-800 font-bold text-2xl">Fare</div>
+            </div>
+            <?php 
+                while($row=mysqli_fetch_assoc($result)){
+                    echo'<div class="flex flex-row bg-green-300 h-auto w-full shadow-lg p-4">
+                            <div class="flex flex-row w-full mt-4 space-x-9">
+                                <div class="w-1/6 text-center">
+                                    <h2 class="text-green-800 text-xl font-semibold">'.$row['passenger'].'</h2>
+                                </div>
+                                <div class="flex flex-col justify-center items-center w-1/6 text-center">
+                                    <h2 class="text-green-800 text-2xl font-semibold">'.$row['source'].'</h2>
+                                </div>
+                                <div class="w-1/6 text-center">
+                                    <h2 class="text-green-800 text-xl font-semibold">'.$row['doj'].'</h2>
+                                </div>
+                                <div class="flex flex-col justify-center items-center w-1/6 text-center">
+                                    <h2 class="text-green-800 text-2xl font-semibold">'.$row['dest'].'</h2>
+                                </div>
+                                <div class="w-1/6 text-center">
+                                    <h2 class="text-green-800 text-xl font-semibold">'.$row['seat'].'</h2>
+                                </div>
+                                <div class="w-1/6 text-center">
+                                    <h2 class="text-green-800 text-2xl">₹300</h2>
+                                </div>
+                            </div>
+                        </div>';
+                }
+            ?>
+            <button onclick="history.back()" class="bg-green-600 text-white w-1/6 mt-4 py-2 px-4 rounded-md hover:bg-green-800">
+                Go Back
+            </button>
+        </main>
+    <?php else: ?>
+        <main class="flex flex-col justify-center items-center">
+            <h1 class="text-green-700 text-5xl mt-56 font-bold">No bookings made yet! 😞</h1>
+            <button onclick="history.back()" class="bg-green-600 text-white w-1/6 mt-4 py-2 px-4 rounded-md hover:bg-green-800">
+                Go Back
+            </button>
+        </main>
+    <?php endif ?>
 </body>
 </html>
