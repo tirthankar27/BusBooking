@@ -48,7 +48,7 @@
                                     <h2 class="text-green-800 text-xl font-semibold">'.$row['seat'].'</h2>
                                 </div>
                                 <div class="w-1/6 text-center">
-                                    <h2 class="text-green-800 text-2xl">₹300</h2>
+                                    <h2 class="text-green-800 text-2xl">₹'.$row['fare'].'</h2>
                                 </div>
                             </div>
                         </div>';

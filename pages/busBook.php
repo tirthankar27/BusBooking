@@ -33,7 +33,7 @@
                         <p class="text-green-800 text-lg">12:30 PM</p>
                     </div>
                     <div class="w-1/6 text-center">
-                        <h2 class="text-green-800 text-2xl">₹300</h2>
+                        <h2 class="text-green-800 text-2xl">₹300*</h2>
                     </div>
                     <div class="w-1/6 text-center">
                         <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
@@ -66,7 +66,7 @@
                         <p class="text-green-800 text-lg">8:00 PM</p>
                     </div>
                     <div class="w-1/6 text-center">
-                        <h2 class="text-green-800 text-2xl">₹300</h2>
+                        <h2 class="text-green-800 text-2xl">₹300*</h2>
                     </div>
                     <div class="w-1/6 text-center">
                         <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">

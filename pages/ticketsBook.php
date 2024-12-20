@@ -5,8 +5,8 @@
         $_SESSION['passenger'] = $_POST['passenger'];
         $_SESSION['seat'] = $_POST['seat'];
         if($_SESSION['passenger'] && $_SESSION['seat']){
-            $checkStmt=$conn->prepare("SELECT * FROM bookings WHERE seat = ? AND email = ? AND doj = ?");
-            $checkStmt->bind_param('sss',$_SESSION['seat'],$_SESSION['email'],$_SESSION['date']);
+            $checkStmt=$conn->prepare("SELECT * FROM bookings WHERE seat = ? AND doj = ?");
+            $checkStmt->bind_param('ss',$_SESSION['seat'],$_SESSION['date']);
             $checkStmt->execute();
             $result = $checkStmt->get_result();
             if($result->num_rows > 0){
