@@ -6,7 +6,7 @@
         <div class="flex flex-row justify-center items-start h-full md:flex-row m-1 font space-x-16">
             <div class="flex flex-col justify-center items-center h-full w-1/5">
                 <h1 class="text-2xl text-green-800 font-bold ">🚌BookMyTrip</h1>
-                <p class="text-sm text-green-800 font-bold ">BookMyTrip is my project where I developed a system where users can signup and login and book bus tickets at reasonable price. This project still at development phase so some pages are still missing. But will add those pages in near future</p>
+                <p class=" text-xs text-green-800 font-semibold">BookMyTrip is my project where I developed a system where users can signup and login and book bus tickets at reasonable price. This project still at development phase so some pages are still missing. But will add those pages in near future</p>
             </div>
             <span class="flex  justify-center items-center text-3xl w-1/5 font-semibold">
                 <?php
