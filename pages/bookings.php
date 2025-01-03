@@ -54,16 +54,15 @@
                         </div>';
                 }
             ?>
-            <button onclick="history.back()" class="bg-green-600 text-white w-1/6 mt-4 py-2 px-4 rounded-md hover:bg-green-800">
-                Go Back
-            </button>
+            <a href="deleteBooking.php" class="flex justify-center items-center h-16 w-32 mb-2 bg-green-700 rounded-md hover:bg-green-800">
+                Delete Bookings
+            </a>
+            <a href="../main.php" class="flex justify-center items-center h-16 w-32 mb-2 bg-green-700 rounded-md hover:bg-green-800">Go Back</a>
         </main>
     <?php else: ?>
         <main class="flex flex-col justify-center items-center">
             <h1 class="text-green-700 text-5xl mt-56 font-bold">No bookings made yet! 😞</h1>
-            <button onclick="history.back()" class="bg-green-600 text-white w-1/6 mt-4 py-2 px-4 rounded-md hover:bg-green-800">
-                Go Back
-            </button>
+            <a href="../main.php" class="flex justify-center items-center h-16 w-32 mb-2 bg-green-700 rounded-md hover:bg-green-800">Go Back</a>
         </main>
     <?php endif ?>
 </body>

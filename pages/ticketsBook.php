@@ -48,10 +48,10 @@
                     </select>
                 </div>
                 <div class="my-auto">
-                    <Button type="submit" class="h-16 w-32 bg-green-700 rounded-r-lg hover:bg-green-800">Book</Button>
+                    <button type="submit" class="h-16 w-32 bg-green-700 rounded-r-lg hover:bg-green-800">Book</Button>
                 </div>
             </form>
-            <button onclick="history.back()" class="h-16 w-32 mb-2 bg-green-700 rounded-md hover:bg-green-800">Go Back</button>
+            <a onclick="history.back()" class="h-16 w-32 mb-2 bg-green-700 rounded-md hover:bg-green-800">Go Back</>
         </div>
     </main>
 </body>

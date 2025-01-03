@@ -1,21 +1,18 @@
-<head>
-
-</head>
 <footer>
-    <div class="flex flex-col w-full h-fit bg-green-100 text-green-700 px-6 md:px-14 py-10 rounded-xl">
+    <div class="flex flex-col w-full h-fit bg-green-200 text-green-700 px-6 md:px-14 py-10 rounded-t-xl">
         <div class="flex flex-row justify-center items-start h-full md:flex-row m-1 font space-x-16">
-            <div class="flex flex-col justify-center items-center h-full w-1/5">
+            <div class="flex flex-col justify-center items-start h-full w-1/4">
                 <h1 class="text-2xl text-green-800 font-bold ">🚌BookMyTrip</h1>
-                <p class=" text-xs text-green-800 font-semibold">BookMyTrip is my project where I developed a system where users can signup and login and book bus tickets at reasonable price. This project still at development phase so some pages are still missing. But will add those pages in near future</p>
+                <p class=" text-xs text-green-800 font-semibold">BookMyTrip is a project I developed to provide users with a seamless platform for signing up, logging in, and booking bus tickets at competitive prices. While the project is still under development and some pages are currently incomplete, I plan to incorporate the remaining features in the near future.</p>
             </div>
-            <span class="flex  justify-center items-center text-3xl w-1/5 font-semibold">
+            <!-- <span class="flex  justify-center items-center text-3xl w-1/5 font-semibold">
                 <?php
                     date_default_timezone_set('Asia/Kolkata');
                     $t=date("h:i A");
                     echo "$t";
                 ?>
-            </span>
-            <about class="flex flex-col justify-center items-start font-semibold w-1/5">
+            </span> -->
+            <about class="flex flex-col justify-center items-start font-semibold w-1/4">
                 <h1 class="font-bold">About BookMyTrip</h1>
                 <div class="flex hover:text-green-900">
                     <a href="" target="_blank">About us</a>
@@ -33,7 +30,7 @@
                     <a href="" target="_blank">Gift cards</a>
                 </div>
             </about>
-            <info class="flex flex-col justify-center items-start font-semibold w-1/5">
+            <info class="flex flex-col justify-center items-start font-semibold w-1/4">
                 <h1 class="font-bold">Info</h1>
                 <div class="flex hover:text-green-900">
                     <a href="" target="_blank">TnC</a>
@@ -54,7 +51,7 @@
                     <a href="" target="_blank">Customer support</a>
                 </div>
             </info>
-            <social class="flex flex-col justify-center items-start font-semibold w-1/5">
+            <social class="flex flex-col justify-center items-start font-semibold w-1/4">
                 <h1 class="font-bold">Connect with us</h1>
                 <div class="flex hover:text-green-900">
                     <i class="ri-github-line"></i>
