@@ -29,27 +29,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="h-screen flex items-center justify-center">
     <?php if ($result->num_rows > 0) : ?>
-        <main class="flex flex-col justify-center items-center h-lvh w-lvw">
-            <div class="flex flex-col justify-center items-center bg-green-400 bg-opacity-70 h-1/2 w-1/2">
-                <h1 class="text-white font-bold text-5xl">Select date</h1>
-                <form action="" method="post" class="flex flex-row h-80 w-auto">
-                    <div class="my-auto">
-                        <select name="date" id="date" required class="h-16 w-48 rounded-s-lg">
-                            <option value="" disabled selected> Select doj </option>
-                            <?php
-                            while ($rows = $result->fetch_assoc())
-                                echo "<option value='{$rows['doj']}'> {$rows['doj']} </option>";
-                            ?>
-                        </select>
-                    </div>
-                    <div class="my-auto">
-                        <button type="submit" class="h-16 w-32 bg-green-700 rounded-r-lg hover:bg-green-800">Delete</Button>
-                    </div>
-                </form>
-                <button onclick="history.back()" class="h-16 w-32 mb-2 bg-green-700 rounded-md hover:bg-green-800">Go Back</button>
-            </div>
+        <main class="flex flex-col justify-center items-center bg-green-400 bg-opacity-70 h-auto sm:w-3/4 lg:w-1/2 p-4 rounded-lg shadow-lg">
+            <h1 class="text-white font-bold text-3xl sm:text-4xl lg:text-5xl mb-4">Select date</h1>
+            <form action="" method="post" class="flex flex-col w-full sm:w-auto sm:flex-row sm:space-x-4">
+                <div class="my-auto w-full sm:w-48 flex">
+                    <select name="date" id="date" required class="h-16 w-full rounded-l-lg">
+                        <option value="" disabled selected> Select DOJ </option>
+                        <?php
+                        while ($rows = $result->fetch_assoc())
+                            echo "<option value='{$rows['doj']}'> {$rows['doj']} </option>";
+                        ?>
+                    </select>
+                    <button type="submit" class="h-16 w-32 bg-green-700 rounded-r-lg hover:bg-green-800 text-white">Delete</button>
+                </div>
+            </form>
+            <button onclick="history.back()" class="h-16 w-full sm:w-32 mt-4 bg-green-700 rounded-lg hover:bg-green-800 text-white">Go Back</button>
         </main>
     <?php endif ?>
 </body>

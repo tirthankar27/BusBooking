@@ -1,41 +1,42 @@
 <?php
-    if($_SERVER['REQUEST_METHOD']=='POST'){
-        $_SESSION['source'] = $_POST['source'];
-        $_SESSION['dest'] = $_POST['dest'];
-        $_SESSION['date'] = $_POST['date'];
-        header('Location:pages/busBook.php');
-    }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['source'] = $_POST['source'];
+    $_SESSION['dest'] = $_POST['dest'];
+    $_SESSION['date'] = $_POST['date'];
+    header('Location:pages/busBook.php');
+}
 ?>
-<main class="flex flex-col min-h-screen bg-white my-24 h-full">
-    <form method="POST" action="" class="bg-center h-80 w-auto bg-green-200 rounded border-1" style="background-image: url(images/bg1.jpg);">
-        <h1 class="flex flex-grow justify-center text-white text-7xl font-bold">Travel with ease</h1>
-        <submit class="flex flex-col md:flex-row items-center justify-center ps-1 mt-8">
-            <div class="my-auto">
-                <input type="text" name="source" id="source" size="50" maxlength="50" placeholder="From" required class="border-x border-e-slate-200 rounded-l-lg h-16">
+<main class="flex flex-col min-h-screen bg-white my-24 h-full px-4">
+    <form method="POST" action="" class="bg-center w-full bg-green-200 rounded-lg border-1 h-80 sm:h-80 flex flex-col justify-center items-center" style="background-image: url(images/bg1.jpg);">
+        <h1 class="text-white text-4xl sm:text-5xl md:text-7xl font-bold py-8 text-center">Travel with ease</h1>
+        <div class="flex flex-col sm:flex-row justify-center items-center w-full mt-8 space-x-0 sm:space-x-0">
+            <div class="flex w-full sm:w-1/4 justify-center px-0">
+                <input type="text" name="source" id="source" size="50" maxlength="50" placeholder="From" required class="border-x border-slate-200 rounded-l-lg h-16 w-full">
             </div>
-            <div class="my-auto">
-                <input type="text" name="dest" id="dest" size="50" maxlength="50" placeholder="To" required class="border-e border-e-slate-200 h-16">
+            <div class="flex w-full sm:w-1/4 justify-center px-0">
+                <input type="text" name="dest" id="dest" size="50" maxlength="50" placeholder="To" required class="border-x border-slate-200 h-16 w-full">
             </div>
-            <div class="my-auto">
-                <input type="date" name="date" id="date" placeholder="DD-MM-YYYY" required class="h-16">
+            <div class="flex w-full sm:w-1/4 justify-center px-0">
+                <input type="date" name="date" id="date" placeholder="DD-MM-YYYY" required class="h-16 w-full">
             </div>
-            <div>
-                <button type="submit" class="bg-green-500 h-16 w-16 rounded-r-lg">Search</button>
+            <div class="flex w-full sm:w-auto justify-center px-0">
+                <button type="submit" class="bg-green-500 h-16 w-full sm:w-32 rounded-r-lg text-white">Search</button>
             </div>
-        </submit>
+        </div>
     </form>
-    <contents class="flex flex-row h-auto mt-16">
-        <div class="flex justify-center items-end bg-cover b h-64 w-1/5 ms-12 rounded-lg shadow-md" style="background-image: url(images/images4.png);">
-            <h4 class="text-green-600 font-bold">Get 15% off on first booking*</h4>
+    <div class="flex flex-wrap justify-center items-center mt-16 space-y-4 sm:space-y-0 sm:space-x-4">
+        <div class="flex justify-center items-end bg-cover h-64 w-full sm:w-1/5 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images4.png);">
+            <h4 class="text-green-600 font-bold p-2">Get 15% off on first booking*</h4>
         </div>
-        <div class="flex justify-center items-end bg-cover h-64 w-1/5 ms-12 rounded shadow-md" style="background-image: url(images/images2.png);">
-        <h4 class="text-green-600 font-bold">Amazing cashbacks on card/UPI*</h4>
+        <div class="flex justify-center items-end bg-cover h-64 w-full sm:w-1/5 rounded shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images2.png);">
+            <h4 class="text-green-600 font-bold p-2">Amazing cashbacks on card/UPI*</h4>
         </div>
-        <div class="flex justify-center items-end bg-cover  h-64 w-1/5 ms-12 rounded shadow-md" style="background-image: url(images/images3.png);">
-        <h4 class="text-green-600 font-bold">Refer and earn*</h4>
+        <div class="flex justify-center items-end bg-cover h-64 w-full sm:w-1/5 rounded shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images3.png);">
+            <h4 class="text-green-600 font-bold p-2">Refer and earn*</h4>
         </div>
-        <div class="flex justify-center items-end bg-cover bg h-64 w-1/5 ms-12 rounded shadow-md" style="background-image: url(images/images1.png);">
-        <h4 class="text-green-600 font-bold">Help us to go green</h4>
+        <div class="flex justify-center items-end bg-cover h-64 w-full sm:w-1/5 rounded shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images1.png);">
+            <h4 class="text-green-600 font-bold p-2">Help us to go green</h4>
         </div>
-    </contents>
+    </div>
+
 </main>
