@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <option value="" disabled selected> Select DOJ </option>
                         <?php
                         while ($rows = $result->fetch_assoc())
-                            echo "<option value='{$rows['doj']}'> {$rows['doj']} </option>";
+                            echo "<option value='{$rows['doj']}'> {$rows['doj']} {$rows ['passenger']} </option>";
                         ?>
                     </select>
                     <button type="submit" class="h-16 w-32 bg-green-700 rounded-r-lg hover:bg-green-800 text-white">Delete</button>
