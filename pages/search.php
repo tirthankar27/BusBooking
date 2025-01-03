@@ -25,18 +25,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </form>
     <div class="flex flex-wrap justify-center items-center mt-16 space-y-4 sm:space-y-0 sm:space-x-4">
-        <div class="flex justify-center items-end bg-cover h-64 w-full sm:w-1/5 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images4.png);">
-            <h4 class="text-green-600 font-bold p-2">Get 15% off on first booking*</h4>
-        </div>
-        <div class="flex justify-center items-end bg-cover h-64 w-full sm:w-1/5 rounded shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images2.png);">
-            <h4 class="text-green-600 font-bold p-2">Amazing cashbacks on card/UPI*</h4>
-        </div>
-        <div class="flex justify-center items-end bg-cover h-64 w-full sm:w-1/5 rounded shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images3.png);">
-            <h4 class="text-green-600 font-bold p-2">Refer and earn*</h4>
-        </div>
-        <div class="flex justify-center items-end bg-cover h-64 w-full sm:w-1/5 rounded shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images1.png);">
-            <h4 class="text-green-600 font-bold p-2">Help us to go green</h4>
-        </div>
+    <div class="flex flex-col justify-end bg-cover h-64 w-full sm:w-1/5 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images4.png);">
+        <h4 class="text-green-600 font-bold p-2 text-center whitespace-nowrap">Get 15% off on first booking*</h4>
     </div>
+    <div class="flex flex-col justify-end bg-cover h-64 w-full sm:w-1/5 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images2.png);">
+        <h4 class="text-green-600 font-bold p-2 text-center whitespace-nowrap">Amazing cashbacks on card/UPI*</h4>
+    </div>
+    <div class="flex flex-col justify-end bg-cover h-64 w-full sm:w-1/5 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images3.png);">
+        <h4 class="text-green-600 font-bold p-2 text-center whitespace-nowrap">Refer and earn*</h4>
+    </div>
+    <div class="flex flex-col justify-end bg-cover h-64 w-full sm:w-1/5 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" style="background-image: url(images/images1.png);">
+        <h4 class="text-green-600 font-bold p-2 text-center whitespace-nowrap">Help us to go green</h4>
+    </div>
+</div>
 
 </main>
