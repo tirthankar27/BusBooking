@@ -36,9 +36,15 @@
                         <h2 class="text-green-800 text-2xl">₹300*</h2>
                     </div>
                     <div class="w-full sm:w-1/6 text-center">
-                        <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
-                            Book
-                        </button>
+                        <?php if(isset($_SESSION['id'])): ?>
+                            <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
+                                Book
+                            </button>
+                        <?php else: ?>
+                            <button onclick="window.location.href = 'login.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
+                                Book
+                            </button>
+                        <?php endif?>
                         <button onclick="history.back()" class="bg-green-600 text-white mt-4 py-2 px-4 rounded-md hover:bg-green-800">
                             Go Back
                         </button>
