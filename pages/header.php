@@ -6,7 +6,10 @@
             <a href="pages/login.php" class="text-lg font-semibold text-green-700 hover:text-green-900">Login</a>
             <a href="pages/signup.php" class="text-lg font-semibold text-green-700 hover:text-green-900">Signup</a>
         <?php else: ?>
-            <a href="" class="text-lg font-semibold text-green-700 hover:text-green-900"><?php echo $_SESSION['name']; ?></a>
+            <div class="text-lg font-semibold text-green-700 hover:text-green-900">
+                <i class="ri-user-3-fill"></i>
+                <a href=""><?php echo $_SESSION['name']; ?></a>
+            </div>
             <a href="pages/bookings.php" class="text-lg font-semibold text-green-700 hover:text-green-900">My Bookings</a>
             <a href="pages/logout.php" class="text-lg font-semibold text-green-700 hover:text-green-900">Logout</a>
         <?php endif; ?>
