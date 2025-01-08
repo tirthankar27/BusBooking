@@ -27,39 +27,40 @@
 </head>
 
 <body>
-    <main class="flex justify-center items-center py-20 sm:py-40 h-auto sm:h-screen bg-cover" style="background-image: url(../images/bg2.jpg);">
-        <div class="flex flex-col justify-center items-center bg-green-400 bg-opacity-70 h-full w-full sm:w-4/5 md:w-1/2 rounded-lg p-6">
-            <h1 class="text-white font-bold text-3xl text-center mb-4">Select payment method</h1>
-            <?php echo '<h1 class="text-white font-bold text-xl text-center mb-8">Please pay ' . $_SESSION['fare'] . ' Rs.</h1>'; ?>
-            <form action="" method="POST" class="flex flex-col sm:flex-row items-center w-full space-y-4 sm:space-y-0 sm:space-x-4">
-                <div class="w-full sm:w-1/3">
-                    <label class="block text-white text-lg">
-                        <input type="radio" name="payment" id="payment" value="credit_card" required>
-                        Credit Card
+    <main class="flex flex-row justify-center items-center h-auto sm:h-screen bg-cover" style="background-image: url(../images/bg9.jpg);">
+        <div class="flex flex-col justify-center items-center bg-white bg-opacity-70 h-full w-full sm:w-4/5 md:w-2/5 rounded-lg p-6" style="background-image: url(../images/bg8.jpg);">
+            <h1 class="text-green-700 font-bold text-3xl text-center mb-4">Select payment method</h1>
+            <?php echo '<h1 class="text-green-700 font-bold text-xl text-center mb-8">Please pay ' . $_SESSION['fare'] . ' Rs.</h1>'; ?>
+            <form action="" method="POST" class="flex flex-col w-full space-y-6 items-center">
+                <div class="w-full flex justify-center">
+                    <label class="flex items-center space-x-3 text-green-700 text-lg">
+                        <input type="radio" name="payment" value="credit_card" required>
+                        <span>Credit Card</span>
                     </label>
                 </div>
-                <div class="w-full sm:w-1/3">
-                    <label class="block text-white text-lg">
-                        <input type="radio" name="payment" id="payment" value="debit_card" required>
-                        Debit Card
+                <div class="w-full flex justify-center">
+                    <label class="flex items-center space-x-3 text-green-700 text-lg">
+                        <input type="radio" name="payment" value="debit_card" required>
+                        <span>Debit Card</span>
                     </label>
                 </div>
-                <div class="w-full sm:w-1/3">
-                    <label class="block text-white text-lg">
-                        <input type="radio" name="payment" id="payment" value="upi" required>
-                        BHIM/UPI
+                <div class="w-full flex justify-center">
+                    <label class="flex items-center space-x-3 text-green-700 text-lg">
+                        <input type="radio" name="payment" value="upi" required>
+                        <span>BHIM/UPI</span>
                     </label>
                 </div>
-                <div class="w-full sm:w-1/3">
-                    <button type="submit" class="h-16 w-full sm:w-auto bg-green-700 rounded-lg text-white text-lg hover:bg-green-800 mt-4 sm:mt-0">
-                        Proceed to pay
+                <div class="w-full flex justify-center">
+                    <button type="submit" class="h-12 w-1/2 sm:w-1/3 bg-green-700 rounded-lg text-white text-lg hover:bg-green-800">
+                        Proceed to Pay
                     </button>
                 </div>
             </form>
-            <button onclick="history.back()" class="h-16 w-full sm:w-1/3 mt-4 bg-green-700 rounded-md text-white text-lg hover:bg-green-800">
+            <a onclick="history.back()" class="h-12 w-full sm:w-1/3 mt-4 bg-green-700 rounded-lg text-white text-lg text-center block py-3 hover:bg-green-800">
                 Go Back
-            </button>
+            </a>
         </div>
+        <div class="hidden sm:block bg-cover h-full w-full sm:w-3/5" style="background-image: url(../images/bg2.jpg);"></div>
     </main>
 </body>
 

@@ -1,4 +1,4 @@
-<?php session_start()?>
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +11,7 @@
 
 <body>
     <?php include 'header.php'; ?>
-    <main class="flex justify-center items-center px-4 sm:px-6 md:px-8">
+    <main class="flex justify-center items-center h-full w-full bg-cover px-4 sm:px-6 md:px-8">
         <?php if ($_SESSION['source'] == 'Ravangla' && $_SESSION['dest'] == 'Silliguri'): ?>
             <div class="flex flex-col sm:flex-row justify-center items-center mt-12 sm:mt-48 bg-green-300 w-full sm:w-11/12 rounded-lg shadow-lg p-4">
                 <div class="h-full w-full sm:w-1/4 overflow-hidden rounded-lg mb-4 sm:mb-0">
@@ -36,7 +36,7 @@
                         <h2 class="text-green-800 text-2xl">₹300*</h2>
                     </div>
                     <div class="w-full sm:w-1/6 text-center">
-                        <?php if(isset($_SESSION['id'])): ?>
+                        <?php if (isset($_SESSION['id'])): ?>
                             <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
                                 Book
                             </button>
@@ -44,7 +44,7 @@
                             <button onclick="window.location.href = 'login.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
                                 Book
                             </button>
-                        <?php endif?>
+                        <?php endif ?>
                         <button onclick="history.back()" class="bg-green-600 text-white mt-4 py-2 px-4 rounded-md hover:bg-green-800">
                             Go Back
                         </button>
@@ -75,9 +75,15 @@
                         <h2 class="text-green-800 text-2xl">₹300*</h2>
                     </div>
                     <div class="w-full sm:w-1/6 text-center">
-                        <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
-                            Book
-                        </button>
+                        <?php if (isset($_SESSION['id'])): ?>
+                            <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
+                                Book
+                            </button>
+                        <?php else: ?>
+                            <button onclick="window.location.href = 'login.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
+                                Book
+                            </button>
+                        <?php endif ?>
                         <button onclick="history.back()" class="bg-green-600 text-white mt-4 py-2 px-4 rounded-md hover:bg-green-800">
                             Go Back
                         </button>
