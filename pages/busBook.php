@@ -37,15 +37,15 @@
                     </div>
                     <div class="w-full sm:w-1/6 text-center">
                         <?php if (isset($_SESSION['id'])): ?>
-                            <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
+                            <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-800 duration-300">
                                 Book
                             </button>
                         <?php else: ?>
-                            <button onclick="window.location.href = 'login.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
+                            <button onclick="window.location.href = 'login.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-800 duration-300">
                                 Book
                             </button>
                         <?php endif ?>
-                        <button onclick="history.back()" class="bg-green-600 text-white mt-4 py-2 px-4 rounded-md hover:bg-green-800">
+                        <button onclick="history.back()" class="bg-green-600 text-white mt-4 py-2 px-4 rounded-md hover:bg-green-800 duration-300">
                             Go Back
                         </button>
                     </div>
@@ -76,15 +76,15 @@
                     </div>
                     <div class="w-full sm:w-1/6 text-center">
                         <?php if (isset($_SESSION['id'])): ?>
-                            <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
+                            <button onclick="window.location.href = 'ticketsBook.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-800 duration-300">
                                 Book
                             </button>
                         <?php else: ?>
-                            <button onclick="window.location.href = 'login.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-700">
+                            <button onclick="window.location.href = 'login.php'" class="bg-green-600 text-white w-full py-2 rounded-md hover:bg-green-800 duration-300">
                                 Book
                             </button>
                         <?php endif ?>
-                        <button onclick="history.back()" class="bg-green-600 text-white mt-4 py-2 px-4 rounded-md hover:bg-green-800">
+                        <button onclick="history.back()" class="bg-green-600 text-white mt-4 py-2 px-4 rounded-md hover:bg-green-800 duration-300">
                             Go Back
                         </button>
                     </div>

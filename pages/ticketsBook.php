@@ -51,11 +51,11 @@
                     </select>
                 </div>
                 <div class="w-2/3">
-                    <button type="submit" class="h-16 w-full bg-green-700 rounded-lg hover:bg-green-800 text-white text-lg">Book</button>
+                    <button type="submit" class="h-16 w-full bg-green-700 rounded-lg hover:bg-green-800 duration-300 text-white text-lg">Book</button>
                 </div>
             </form>
             <a onclick="history.back()" 
-               class="h-16 w-2/3 mt-4 bg-green-700 rounded-lg text-white text-lg text-center block py-3 hover:bg-green-800">
+               class="h-16 w-2/3 mt-4 bg-green-700 rounded-lg text-white text-lg text-center block py-3 hover:bg-green-800 duration-300">
                 Go Back
             </a>
         </div>

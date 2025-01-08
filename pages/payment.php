@@ -51,12 +51,12 @@
                     </label>
                 </div>
                 <div class="w-full flex justify-center">
-                    <button type="submit" class="h-12 w-1/2 sm:w-1/3 bg-green-700 rounded-lg text-white text-lg hover:bg-green-800">
+                    <button type="submit" class="h-12 w-1/2 sm:w-1/3 bg-green-700 rounded-lg text-white text-lg hover:bg-green-800 duration-300">
                         Proceed to Pay
                     </button>
                 </div>
             </form>
-            <a onclick="history.back()" class="h-12 w-full sm:w-1/3 mt-4 bg-green-700 rounded-lg text-white text-lg text-center block py-3 hover:bg-green-800">
+            <a onclick="history.back()" class="h-12 w-full sm:w-1/3 mt-4 bg-green-700 rounded-lg text-white text-lg text-center block py-3 hover:bg-green-800 duration-300">
                 Go Back
             </a>
         </div>

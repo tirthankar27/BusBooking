@@ -52,15 +52,15 @@
                         </div>';
                 }
             ?>
-            <a href="deleteBooking.php" class="flex justify-center items-center h-12 w-40 mt-4 mb-2 bg-green-700 rounded-md text-white text-lg sm:text-xl hover:bg-green-800">
+            <a href="deleteBooking.php" class="flex justify-center items-center h-12 w-40 mt-4 mb-2 bg-green-700 rounded-md text-white text-lg sm:text-xl hover:bg-green-800 duration-300">
                 Delete Bookings
             </a>
-            <a href="../main.php" class="flex justify-center items-center h-12 w-40 mb-2 bg-green-700 rounded-md text-white text-lg sm:text-xl hover:bg-green-800">Go Back</a>
+            <a href="../main.php" class="flex justify-center items-center h-12 w-40 mb-2 bg-green-700 rounded-md text-white text-lg sm:text-xl hover:bg-green-800 duration-300">Go Back</a>
         </main>
     <?php else: ?>
         <main class="flex flex-col justify-center items-center h-screen px-4">
             <h1 class="text-green-700 text-3xl sm:text-4xl lg:text-5xl mt-10 font-bold text-center">No bookings made yet! 😞</h1>
-            <a href="../main.php" class="flex justify-center items-center h-12 w-40 mt-4 bg-green-700 rounded-md text-white text-lg sm:text-xl hover:bg-green-800">Go Back</a>
+            <a href="../main.php" class="flex justify-center items-center h-12 w-40 mt-4 bg-green-700 rounded-md text-white text-lg sm:text-xl hover:bg-green-800 duration-300">Go Back</a>
         </main>
     <?php endif ?>
 </body>

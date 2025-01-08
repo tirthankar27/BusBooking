@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header('Location:pages/busBook.php');
 }
 ?>
-<main class="flex flex-col min-h-screen bg-white my-24 h-full px-4">
+<main class="flex flex-col min-h-screen my-24 h-full px-4">
     <form method="POST" action="" class="bg-center w-full bg-green-200 rounded-lg border-1 h-80 sm:h-80 flex flex-col justify-center items-center" style="background-image: url(images/bg1.jpg);">
         <h1 class="text-white text-4xl sm:text-5xl md:text-7xl font-bold py-8 text-center">Travel with ease</h1>
         <div class="flex flex-col sm:flex-row justify-center items-center w-full mt-8 space-x-0 sm:space-x-0">
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="date" name="date" id="date" placeholder="DD-MM-YYYY" required class="h-16 w-full">
             </div>
             <div class="flex w-full sm:w-auto justify-center px-0">
-                <button type="submit" class="bg-green-500 h-16 w-full sm:w-32 rounded-r-lg text-white">Search</button>
+                <button type="submit" class="bg-green-600 h-16 w-full sm:w-32 rounded-r-lg text-white hover:bg-green-800 duration-300">Search</button>
             </div>
         </div>
     </form>
