@@ -29,25 +29,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="h-screen flex items-center justify-center">
+<body class="h-screen flex items-center justify-center bg-cover">
     <?php if ($result->num_rows > 0) : ?>
-        <main class="flex flex-col justify-center items-center bg-green-400 bg-opacity-70 h-auto sm:w-3/4 lg:w-1/2 p-4 rounded-lg shadow-lg">
-            <h1 class="text-white font-bold text-3xl sm:text-4xl lg:text-5xl mb-4">Select date</h1>
-            <form action="" method="post" class="flex flex-col w-full sm:w-auto sm:flex-row sm:space-x-4">
-                <div class="my-auto w-full sm:w-48 flex">
-                    <select name="date" id="date" required class="h-16 w-full rounded-l-lg">
-                        <option value="" disabled selected> Select DOJ </option>
-                        <?php
-                        while ($rows = $result->fetch_assoc())
-                            echo "<option value='{$rows['doj']}'> {$rows['doj']} {$rows ['passenger']} </option>";
-                        ?>
-                    </select>
-                    <button type="submit" class="h-16 w-32 bg-green-700 rounded-r-lg hover:bg-green-800 text-white">Delete</button>
+        <main class="flex justify-center items-center h-full w-full sm:h-screen bg-cover" style="background-image: url(../images/bg8.jpg);">
+            <div class="flex flex-col justify-center items-center w-full sm:w-full lg:w-2/5 rounded-lg p-6 bg-opacity-70">
+                <h1 class="text-green-700 text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-center">Select Date</h1>
+                <form action="" method="post" class="flex flex-col w-full space-y-4">
+                    <div class="w-full flex justify-center">
+                        <select name="date" id="date" required class="h-16 w-full sm:w-full lg:w-96 border-2 border-green-700 rounded-md p-2">
+                            <option value="" disabled selected> Select DOJ </option>
+                            <?php
+                            while ($rows = $result->fetch_assoc())
+                                echo "<option value='{$rows['doj']}'> {$rows['doj']} {$rows['passenger']} </option>";
+                            ?>
+                        </select>
+                    </div>
+                    <div class="w-full flex justify-center">
+                        <button type="submit" class="h-16 w-full sm:w-32 mt-4 bg-green-700 rounded-lg hover:bg-green-800 text-white">
+                            Delete
+                        </button>
+                    </div>
+                </form>
+                <div class="w-full sm:w-auto">
+                    <button onclick="history.back()" class="h-16 w-full sm:w-32 mt-4 bg-green-700 rounded-lg hover:bg-green-800 text-white">
+                        Go Back
+                    </button>
                 </div>
-            </form>
-            <button onclick="history.back()" class="h-16 w-full sm:w-32 mt-4 bg-green-700 rounded-lg hover:bg-green-800 text-white">Go Back</button>
+            </div>
+            <div class="hidden sm:block bg-cover h-full w-full sm:w-3/5" style="background-image: url(../images/bg2.jpg);">
+            </div>
         </main>
     <?php endif ?>
 </body>
+
+
+
 
 </html>
