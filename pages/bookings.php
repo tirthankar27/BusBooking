@@ -17,7 +17,7 @@
     <title><?php echo $_SESSION['name']."'s"; ?> Bookings</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-blue-50">
     <?php if($result->num_rows > 0):?>
         <main class="flex flex-col justify-center items-center h-auto w-full px-4 sm:px-8 lg:px-16">
             <h1 class="text-green-800 text-3xl sm:text-4xl lg:text-5xl font-bold mt-4">My Bookings</h1>

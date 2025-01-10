@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1 class="text-white text-4xl sm:text-5xl md:text-7xl font-bold py-8 text-center">Travel with ease</h1>
         <div class="flex flex-col sm:flex-row justify-center items-center w-full mt-8 space-x-0 sm:space-x-0">
             <div class="flex w-full sm:w-1/4 justify-center px-0">
-                <input type="text" name="source" id="source" size="50" maxlength="50" placeholder="From" required class="border-x border-slate-200 rounded-l-lg h-16 w-full">
+                <input type="text" name="source" id="source" size="50" maxlength="50" placeholder="From" required class="border-slate-200 rounded-l-lg h-16 w-full">
             </div>
             <div class="flex w-full sm:w-1/4 justify-center px-0">
                 <input type="text" name="dest" id="dest" size="50" maxlength="50" placeholder="To" required class="border-x border-slate-200 h-16 w-full">

@@ -43,7 +43,7 @@
     <main class="flex justify-center items-center bg-cover h-screen w-full">
         <div class="hidden sm:block sm:w-3/5 h-full bg-cover" style="background-image: url(../images/bg3.jpeg);">
         </div>
-        <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../images/bg8.jpg); background-size: cover; background-position: center;">
+        <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../images/bg8.png); background-size: cover; background-position: center;">
             <h2 class="text-green-600 text-4xl sm:text-7xl font-bold mb-4 text-center">Sign Up</h2>
             <form method="POST" action="" class="space-y-4 w-full max-w-md mx-auto">
                 <div>

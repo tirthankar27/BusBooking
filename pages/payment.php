@@ -27,8 +27,8 @@
 </head>
 
 <body>
-    <main class="flex flex-row justify-center items-center h-auto sm:h-screen bg-cover" style="background-image: url(../images/bg9.jpg);">
-        <div class="flex flex-col justify-center items-center bg-white bg-opacity-70 h-full w-full sm:w-4/5 md:w-2/5 rounded-lg p-6" style="background-image: url(../images/bg8.jpg);">
+    <main class="flex flex-row justify-center items-center h-auto sm:h-screen bg-cover">
+        <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../images/bg8.png); background-size: cover; background-position: center;">
             <h1 class="text-green-700 font-bold text-3xl text-center mb-4">Select payment method</h1>
             <?php echo '<h1 class="text-green-700 font-bold text-xl text-center mb-8">Please pay ' . $_SESSION['fare'] . ' Rs.</h1>'; ?>
             <form action="" method="POST" class="flex flex-col w-full space-y-6 items-center">
@@ -60,7 +60,7 @@
                 Go Back
             </a>
         </div>
-        <div class="hidden sm:block bg-cover h-full w-full sm:w-3/5" style="background-image: url(../images/bg2.jpg);"></div>
+        <div class="hidden sm:block sm:w-3/5 h-full bg-cover" style="background-image: url(../images/bg2.jpg);"></div>
     </main>
 </body>
 

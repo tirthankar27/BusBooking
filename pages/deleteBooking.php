@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body class="h-screen flex items-center justify-center bg-cover">
     <?php if ($result->num_rows > 0) : ?>
-        <main class="flex justify-center items-center h-full w-full sm:h-screen bg-cover" style="background-image: url(../images/bg8.jpg);">
-            <div class="flex flex-col justify-center items-center w-full sm:w-full lg:w-2/5 rounded-lg p-6 bg-opacity-70">
+        <main class="flex justify-center items-center h-full w-full sm:h-screen bg-cover">
+            <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../images/bg8.png); background-size: cover; background-position: center;">
                 <h1 class="text-green-700 text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-center">Select Date</h1>
                 <form action="" method="post" class="flex flex-col w-full space-y-4">
                     <div class="w-full flex justify-center">

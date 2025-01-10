@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-yellow-50">
     <?php include 'header.php'; ?>
     <main class="flex justify-center items-center h-full w-full bg-cover px-4 sm:px-6 md:px-8">
         <?php if ($_SESSION['source'] == 'Ravangla' && $_SESSION['dest'] == 'Silliguri'): ?>

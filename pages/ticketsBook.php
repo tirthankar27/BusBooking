@@ -74,18 +74,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <main class="flex flex-col sm:flex-row justify-center items-center h-screen bg-cover" style="background-image: url(../images/bg9.jpg);">
-        <div class="flex flex-col justify-center items-center bg-white bg-opacity-70 h-full w-full sm:w-4/5 md:w-2/5 p-6" style="background-image: url(../images/bg8.jpg);">
+    <main class="flex flex-col sm:flex-row justify-center items-center h-screen bg-cover">
+        <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../images/bg8.png); background-size: cover; background-position: center;">
             <h1 class="text-green-700 font-bold text-xl sm:text-5xl text-center mb-8">Fill out details</h1>
             <form action="" method="post" class="flex flex-col items-center w-full space-y-4">
                 <div class="w-full">
                     <input type="text" name="passenger" placeholder="Passenger's Name" size="30" required
-                        class="h-16 w-full rounded-lg p-4 border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        class="h-16 w-full rounded-lg p-4 border-2 border-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
                 </div>
-                <button id="openModal" type="button" class="h-8 w-2/3 bg-green-700 rounded-lg hover:bg-green-800 duration-300 text-white text-lg">
+                <button id="openModal" type="button" class="h-8 w-full bg-green-700 rounded-lg hover:bg-green-800 duration-300 text-white text-lg">
                     Select Seat
                 </button>
-                <div id="myModal" class="fixed inset-0 bg-gray-500 h-full w-full bg-opacity-50 hidden justify-center items-center">
+                <div id="myModal" class="fixed inset-0 h-full w-full backdrop-blur-sm hidden justify-center items-center">
                     <div class="bg-white p-4 rounded-lg">
                         <h2 class="text-lg font-bold mb-4">Select Your Seat</h2>
                         <input type="hidden" name="seat" id="seatInput" required>
@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                 </div>
                 <div class="w-1/3">
-                    <button type="submit" class="h-8 w-full bg-green-700 rounded-lg hover:bg-green-800 duration-300 text-white text-lg">Book</button>
+                    <button type="submit" class="h-10 w-full bg-green-700 rounded-lg hover:bg-green-800 duration-300 text-white text-lg">Book</button>
                 </div>
             </form>
             <div class="flex justify-center items-center h-10 w-1/3 mt-4 bg-green-700 rounded-lg text-white text-lg text-center py-3 hover:bg-green-800 duration-300">
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </a>
             </div>
         </div>
-        <div class="hidden sm:block bg-cover h-full w-full sm:w-3/5" style="background-image: url(../images/bg2.jpg);">
+        <div class="hidden sm:block sm:w-3/5 h-full bg-cover" style="background-image: url(../images/bg2.jpg);">
         </div>
     </main>
 </body>
