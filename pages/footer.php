@@ -54,6 +54,18 @@
                     <i class="ri-linkedin-fill"></i>
                     <a href="https://www.linkedin.com/in/tirthkeeppushing0036/" target="_blank">LinkedIn</a>
                 </div>
+                <div class="flex hover:text-green-900">
+                    <i class="ri-twitter-x-line"></i>
+                    <a href="" target="_blank">Twitter-X</a>
+                </div>
+                <div class="flex hover:text-green-900">
+                    <i class="ri-instagram-line"></i>
+                    <a href="" target="_blank">Instagram</a>
+                </div>
+                <div class="flex hover:text-green-900">
+                    <i class="ri-facebook-fill"></i>
+                    <a href="" target="_blank">facebook</a>
+                </div>
             </social>
         </div>
     </div>
