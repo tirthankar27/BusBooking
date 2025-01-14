@@ -1,13 +1,4 @@
-<?php
-    session_start();
-    include 'users.php';
-    $mail = $_SESSION['email'];
-    $stmt = $conn->prepare("SELECT * FROM bookings where email = ?");
-    $stmt->bind_param('s', $mail);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $time=date("Y-m-d");
-?>
+<?php include '../backend/bookingsBackend.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -92,7 +83,7 @@
                     }
                 }
             ?>
-            <a href="deleteBooking.php" class="flex justify-center items-center h-12 w-40 mt-4 mb-2 bg-green-700 rounded-md text-white text-lg sm:text-xl hover:bg-green-800 duration-300">
+            <a href="deleteBookingFrontend.php" class="flex justify-center items-center h-12 w-40 mt-4 mb-2 bg-green-700 rounded-md text-white text-lg sm:text-xl hover:bg-green-800 duration-300">
                 Delete Bookings
             </a>
             <a href="../main.php" class="flex justify-center items-center h-12 w-40 mb-2 bg-green-700 rounded-md text-white text-lg sm:text-xl hover:bg-green-800 duration-300">Go Back</a>

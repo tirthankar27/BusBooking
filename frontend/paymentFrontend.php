@@ -1,24 +1,8 @@
-<?php
-    session_start();
-    include 'users.php';
-    if($_SESSION['seat'] % 3 == 0) {
-        $_SESSION['fare'] = 350;
-    } else {
-        $_SESSION['fare'] = 300;
-    }
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $stmt = $conn->prepare("INSERT INTO bookings (passenger, source, dest, doj, seat, fare, email) VALUES (?,?,?,?,?,?,?)");
-        $stmt->bind_param('sssssss', $_SESSION['passenger'], $_SESSION['source'], $_SESSION['dest'], $_SESSION['date'], $_SESSION['seat'], $_SESSION['fare'], $_SESSION['email']);
-        if($stmt->execute()) {
-            echo "<script>alert('Payment successfull');window.location.href='../main.php';</script>";
-            exit();
-        }
-        $stmt->close();
-    }
-?>
+<?php include '../backend/paymentBackend.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +12,7 @@
 
 <body>
     <main class="flex flex-row justify-center items-center h-auto sm:h-screen bg-cover">
-        <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../images/bg8.png); background-size: cover; background-position: center;">
+        <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../assets/images/bg8.png); background-size: cover; background-position: center;">
             <h1 class="text-green-700 font-bold text-3xl text-center mb-4">Select payment method</h1>
             <?php echo '<h1 class="text-green-700 font-bold text-xl text-center mb-8">Please pay ' . $_SESSION['fare'] . ' Rs.</h1>'; ?>
             <form action="" method="POST" class="flex flex-col w-full space-y-6 items-center">
@@ -60,7 +44,7 @@
                 Go Back
             </a>
         </div>
-        <div class="hidden sm:block sm:w-3/5 h-full bg-cover" style="background-image: url(../images/bg2.jpg);"></div>
+        <div class="hidden sm:block sm:w-3/5 h-full bg-cover" style="background-image: url(../assets/images/bg2.jpg);"></div>
     </main>
 </body>
 

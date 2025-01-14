@@ -1,5 +1,5 @@
 <?php 
-    include 'users.php'; 
+    include 'backend/users.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
 </head>
 <body class="bg-yellow-50">
-    <?php include 'header.php'; ?>
-    <?php include 'search.php';?>
-    <?php include 'footer.php'; ?>
+    <?php include 'frontend/headerFrontend.php'; ?>
+    <?php include 'frontend/searchFrontend.php';?>
+    <?php include 'frontend/footerFrontend.php'; ?>
 </body>
 </html>

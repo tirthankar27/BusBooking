@@ -9,30 +9,16 @@
     <div id="menuItems" class="hidden sm:flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-8 items-center mt-4 sm:mt-0">
         <?php if (!isset($_SESSION['id'])): ?>
             <a href="" class="text-lg font-semibold text-green-700 hover:text-green-900">Contact Us</a>
-            <a href="pages/login.php" class="text-lg font-semibold text-green-700 hover:text-green-900">SignIn</a>
-            <a href="pages/signup.php" class="text-lg font-semibold text-green-700 hover:text-green-900">SignUp</a>
+            <a href="frontend/loginFrontend.php" class="text-lg font-semibold text-green-700 hover:text-green-900">SignIn</a>
+            <a href="frontend/signupFrontend.php" class="text-lg font-semibold text-green-700 hover:text-green-900">SignUp</a>
         <?php else: ?>
             <div class="text-lg font-semibold text-green-700 hover:text-green-900">
                 <i class="ri-user-3-fill"></i>
                 <a href=""><?php echo $_SESSION['name']; ?></a>
             </div>
-            <a href="pages/bookings.php" class="text-lg font-semibold text-green-700 hover:text-green-900">My Bookings</a>
-            <a href="pages/logout.php" class="text-lg font-semibold text-green-700 hover:text-green-900">Logout</a>
+            <a href="frontend/bookingsFrontend.php" class="text-lg font-semibold text-green-700 hover:text-green-900">My Bookings</a>
+            <a href="backend/logoutBackend.php" class="text-lg font-semibold text-green-700 hover:text-green-900">Logout</a>
         <?php endif; ?>
     </div>
 </nav>
-
-<script>
-    function spinner(){
-        const animation=document.getElementById('menuToggle');
-        animation.classList.add('animate-spin');
-        setTimeout(function(){
-            animation.classList.remove('animate-spin');
-        },520);
-    }
-    document.getElementById('menuToggle').addEventListener('click', function() {
-        const menuItems = document.getElementById('menuItems');
-        menuItems.classList.toggle('hidden');
-        menuItems.classList.toggle('flex');
-    });
-</script>
+<script src="assets/dropdown.js"></script>

@@ -1,4 +1,4 @@
 <?php
     session_start();
-    include 'pages/guest.php';    
+    include 'frontend/guest.php';    
 ?>

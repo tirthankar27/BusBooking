@@ -1,37 +1,8 @@
-<?php
-    session_start();
-    include 'users.php';
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $name = $_POST['name'] ?? null;
-        $email = $_POST['email'] ?? null;
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        if($email && $password){
-            $checkStmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-            $checkStmt->bind_param("s", $email);
-            $checkStmt->execute();
-            $result = $checkStmt->get_result();
-            
-            if ($result->num_rows > 0) {
-                echo "<script>alert('User with this email already exists. Please use another email or login.'); window.location.href='signup.php';</script>";
-            } else {
-                $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
-                $stmt->bind_param("sss", $name, $email, $password);
-                
-                if ($stmt->execute()) {
-                    echo "<script>alert('Signup successful! Please login.'); window.location.href='login.php';</script>";
-                    exit();
-                } else {
-                    echo "<script>alert('Error: " . $stmt->error . "'); window.location.href='signup.php';</script>";
-                }
-                $stmt->close();
-            }
-            $checkStmt->close();
-        }
-    }
-?>
+<?php include '../backend/signupBackend.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,9 +12,9 @@
 
 <body>
     <main class="flex justify-center items-center bg-cover h-screen w-full">
-        <div class="hidden sm:block sm:w-3/5 h-full bg-cover" style="background-image: url(../images/bg3.jpeg);">
+        <div class="hidden sm:block sm:w-3/5 h-full bg-cover" style="background-image: url(../assets/images/bg3.jpeg);">
         </div>
-        <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../images/bg8.png); background-size: cover; background-position: center;">
+        <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../assets/images/bg8.png); background-size: cover; background-position: center;">
             <h2 class="text-green-600 text-4xl sm:text-7xl font-bold mb-4 text-center">Sign Up</h2>
             <form method="POST" action="" class="space-y-4 w-full max-w-md mx-auto">
                 <div>
@@ -60,7 +31,7 @@
                     <a href="../main.php" class="bg-green-600 hover:bg-green-800 duration-300 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline w-full sm:w-auto text-center">Back to Home</a>
                 </div>
                 <div class="text-center mt-4">
-                    <a href="login.php" class="text-blue-400 hover:text-blue-600">Already have an account? SignIn</a>
+                    <a href="loginFrontend.php" class="text-blue-400 hover:text-blue-600">Already have an account? SignIn</a>
                 </div>
             </form>
         </div>

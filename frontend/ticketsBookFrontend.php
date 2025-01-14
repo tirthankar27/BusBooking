@@ -1,34 +1,4 @@
-<?php
-session_start();
-include 'users.php';
-$bookedSeats = [];
-if (isset($_SESSION['date'])) {
-    $stmt = $conn->prepare("SELECT seat FROM bookings WHERE doj=?");
-    $stmt->bind_param("s", $_SESSION['date']);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    while ($row = $result->fetch_assoc()) {
-        $bookedSeats[] = $row['seat'];
-    }
-    $stmt->close();
-}
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $_SESSION['passenger'] = $_POST['passenger'];
-    $_SESSION['seat'] = $_POST['seat'];
-    if ($_SESSION['passenger'] && $_SESSION['seat']) {
-        $checkStmt = $conn->prepare("SELECT * FROM bookings WHERE seat = ? AND doj = ?");
-        $checkStmt->bind_param('ss', $_SESSION['seat'], $_SESSION['date']);
-        $checkStmt->execute();
-        $result = $checkStmt->get_result();
-        if ($result->num_rows > 0) {
-            echo "<script> alert('This seat has already been taken for this date.'); window.location.href='ticketsBook.php'; </script>";
-        } else {
-            echo "<script>window.location.href='payment.php';</script>";
-        }
-        $checkStmt->close();
-    }
-}
-?>
+<?php include '../backend/ticketsBookBackend.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,44 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Ticket</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        window.onload = function () {
-            modalOpener();
-        };
-
-        function modalOpener() {
-            const modal = document.getElementById("myModal");
-            const openModalButton = document.getElementById("openModal");
-            const closeModalButton = document.getElementById("closeModal");
-
-            openModalButton.addEventListener("click", (event) => {
-                event.preventDefault();
-                modal.classList.remove("hidden");
-                modal.classList.add("flex");
-            });
-
-            closeModalButton.addEventListener("click", () => {
-                modal.classList.remove("flex");
-                modal.classList.add("hidden");
-            });
-        }
-
-        function selectSeat(seatNumber) {
-            const previouslySelected = document.querySelector(".bg-yellow-400");
-            if (previouslySelected) {
-                previouslySelected.classList.remove("bg-yellow-400", "text-black");
-            }
-
-            const selectedSeat = document.getElementById("seat-" + seatNumber);
-            selectedSeat.classList.add("bg-yellow-400", "text-black");
-            document.getElementById("seatInput").value = seatNumber;
-        }
-    </script>
+    <script src="../assets/seatNumber.js"></script>
 </head>
 
 <body>
     <main class="flex flex-col sm:flex-row justify-center items-center h-screen bg-cover">
-        <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../images/bg8.png); background-size: cover; background-position: center;">
+        <div class="flex flex-col justify-center items-center h-screen w-full sm:w-2/5 bg-white bg-opacity-70 p-6 sm:p-10" style="background-image: url(../assets/images/bg8.png); background-size: cover; background-position: center;">
             <h1 class="text-green-700 font-bold text-xl sm:text-5xl text-center mb-8">Fill out details</h1>
             <form action="" method="post" class="flex flex-col items-center w-full space-y-4">
                 <div class="w-full">
@@ -134,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </a>
             </div>
         </div>
-        <div class="hidden sm:block sm:w-3/5 h-full bg-cover" style="background-image: url(../images/bg2.jpg);">
+        <div class="hidden sm:block sm:w-3/5 h-full bg-cover" style="background-image: url(../assets/images/bg2.jpg);">
         </div>
     </main>
 </body>
