@@ -21,7 +21,8 @@
                             <option value="" disabled selected> Select DOJ </option>
                             <?php
                             while ($rows = $result->fetch_assoc())
-                                echo "<option value='{$rows['doj']}'> {$rows['doj']} {$rows['passenger']} </option>";
+                                if($rows['doj']>$date)
+                                    echo "<option value='{$rows['doj']}'> {$rows['doj']} {$rows['passenger']} </option>";
                             ?>
                         </select>
                     </div>

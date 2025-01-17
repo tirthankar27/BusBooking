@@ -5,7 +5,7 @@ $checkstmt = $conn->prepare("SELECT * FROM bookings WHERE email=?");
 $checkstmt->bind_param("s", $_SESSION['email']);
 $checkstmt->execute();
 $result = $checkstmt->get_result();
-
+$date=date("Y-m-d H:i:s");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $conn->prepare("DELETE FROM bookings WHERE email=? and doj=?");
     $stmt->bind_param("ss", $_SESSION['email'], $_POST['date']);

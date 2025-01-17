@@ -1,10 +1,22 @@
 <?php
     session_start();
     include 'users.php';
-    if($_SESSION['seat'] % 3 == 0) {
-        $_SESSION['fare'] = 350;
-    } else {
-        $_SESSION['fare'] = 300;
+    $sql=$conn->prepare("SELECT * FROM bookings WHERE email=?");
+    $sql->bind_param("s",$_SESSION['email']);
+    $sql->execute();
+    $result=$sql->get_result();
+    if($result->num_rows>0){
+        if($_SESSION['seat'] % 3 == 0) {
+            $_SESSION['fare'] = 350;
+        } else {
+            $_SESSION['fare'] = 300;
+        }
+    }else{
+        if($_SESSION['seat'] % 3 == 0) {
+            $_SESSION['fare'] = 297.5;
+        } else {
+            $_SESSION['fare'] = 255;
+        }
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($_SESSION['source']=='Ravangla'){
