@@ -9,6 +9,7 @@
     <title>Book Your Ticket</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../assets/seatNumber.js"></script>
+    <link rel="icon" type="image/x-icon" href="../assets/logo/favicon.ico">
 </head>
 
 <body>

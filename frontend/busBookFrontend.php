@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $_SESSION['source'] . " to " . $_SESSION['dest']; ?> </title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="../assets/logo/favicon.ico">
 </head>
 
 <body class="bg-yellow-50">
-    <?php include 'headerFrontend.php'; ?>
     <main class="flex justify-center items-center h-full w-full bg-cover px-4 sm:px-6 md:px-8">
         <?php if ($_SESSION['source'] == 'Ravangla' && $_SESSION['dest'] == 'Silliguri'): ?>
             <div class="flex flex-col sm:flex-row justify-center items-center mt-12 sm:mt-48 bg-green-300 w-full sm:w-11/12 rounded-lg shadow-lg p-4">

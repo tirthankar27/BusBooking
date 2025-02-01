@@ -1,6 +1,8 @@
 <nav class="flex flex-col sm:flex-row justify-between items-center p-4 bg-white shadow-sm text-green-700 fixed top-0 left-0 right-0 z-10">
     <div class="flex justify-between w-full sm:w-auto">
-        <a href="./main.php" class="text-xl text-green-800 font-bold">🚌BookMyTrip</a>
+        <a href="./main.php">
+            <img src="assets/logo/logo3.png" alt="" style="height: 50px; width: 80px">
+        </a>
         <button id="menuToggle" onclick="spinner()" class="sm:hidden text-green-800">
             <i class="ri-menu-fill"></i>
         </button>

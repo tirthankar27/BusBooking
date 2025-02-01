@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select date</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="../assets/logo/favicon.ico">
 </head>
 
 <body class="h-screen flex items-center justify-center bg-cover">

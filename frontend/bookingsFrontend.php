@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_SESSION['name']."'s"; ?> Bookings</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="../assets/logo/favicon.ico">
 </head>
 <body class="bg-blue-50">
     <?php if($result->num_rows > 0):?>

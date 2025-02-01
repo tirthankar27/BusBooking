@@ -2,7 +2,7 @@
     <div class="flex flex-col w-full bg-stone-50 text-green-700 px-6 md:px-14 py-10 rounded-t-lg shadow-inner">
         <div class="flex flex-col md:flex-row justify-center items-start h-full m-1 font space-y-8 md:space-y-0 md:space-x-16">
             <div class="flex flex-col justify-center items-start h-full w-full md:w-1/4">
-                <h1 class="text-2xl text-green-800 font-bold mb-2">🚌BookMyTrip</h1>
+                <h1 class="text-2xl text-green-800 font-bold mb-2"><img src="assets/logo/logo3.png" alt="" style="height: 100px; width: 160px"></h1>
                 <p class="text-xs text-green-800 font-semibold md:text-sm">BookMyTrip is a project I developed to provide users with a seamless platform for signing up, logging in, and booking bus tickets at competitive prices. While the project is still under development and some pages are currently incomplete, I plan to incorporate the remaining features in the near future.</p>
             </div>
             <about class="flex flex-col justify-center items-start font-semibold w-full md:w-1/4 space-y-2">
