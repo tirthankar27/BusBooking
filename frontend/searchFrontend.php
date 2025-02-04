@@ -35,3 +35,4 @@ include 'backend/searchBackend.php';
     </div>
 
 </main>
+<script src="assets/minDate.js"></script>
