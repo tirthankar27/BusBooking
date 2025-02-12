@@ -27,19 +27,34 @@ if (isset($_SESSION['date'])) {
     }
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $_SESSION['passenger'] = $_POST['passenger'];
-    $_SESSION['seat'] = $_POST['seat'];
-    if ($_SESSION['passenger'] && $_SESSION['seat']) {
+    $passengers = $_POST['passenger'];
+    $seats = explode(',', $_POST['selectedSeats']);
+
+    if (count($passengers) !== count($seats)) {
+        echo "<script> alert('Number of passengers and selected seats must match!'); window.location.href='ticketBooking.php'; </script>";
+        exit;
+    }
+
+    $_SESSION['passengers'] = $passengers;
+    $_SESSION['seats'] = $seats;
+
+    $errors = [];
+    foreach ($seats as $seat) {
         $checkStmt = $conn->prepare("SELECT * FROM bookings WHERE seat = ? AND doj = ?");
-        $checkStmt->bind_param('ss', $_SESSION['seat'], $_SESSION['date']);
+        $checkStmt->bind_param('ss', $seat, $_SESSION['date']);
         $checkStmt->execute();
         $result = $checkStmt->get_result();
+
         if ($result->num_rows > 0) {
-            echo "<script> alert('This seat has already been taken for this date.'); window.location.href='ticketsBookFrontend.php'; </script>";
-        } else {
-            echo "<script>window.location.href='paymentFrontend.php';</script>";
+            $errors[] = "Seat $seat is already taken.";
         }
         $checkStmt->close();
+    }
+
+    if (!empty($errors)) {
+        echo "<script> alert('" . implode("\\n", $errors) . "'); window.location.href='ticketBooking.php'; </script>";
+    } else {
+        echo "<script>window.location.href='paymentFrontend.php';</script>";
     }
 }
 ?>
